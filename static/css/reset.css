@@ -1,0 +1,34 @@
+body{ line-height:normal; margin: 0;}
+body,html{ min-height: 100%; background: #f2f2f2;}
+body,input,button,textarea,select,option,label,a{ font-family:"微软雅黑",Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC","Hiragino Sans GB",\5B8B\4F53,\5FAE\8F6F\96C5\9ED1,\9ED1\4F53,sans-self; color: #333; }
+div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,menu,nav,section,summary,time,mark,audio,video{ margin:0; padding:0; border:0; outline:0; font-size:.24rem; vertical-align: baseline; background: transparent; font-weight: normal; font-style: normal; }
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{ display:block; }
+input,button,textarea,select,option{ margin: 0; padding: 0; outline: none; border: 0; -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border-radius: 0; }
+nav,ul,ol{ list-style:none; }
+blockquote,q{ quotes:none; }
+blockquote:before,blockquote:after,q:before,q:after{ content:none; }
+a{ margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;text-decoration: none;cursor: none; }
+ins{ background:#ff9; color:#000; text-decoration:none; }
+mark{ background:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del{ text-decoration:line-through; }
+abbr[title],dfn[title]{ border-bottom: 1px dotted; cursor:help; }
+table{ border-collapse:collapse; border-spacing:0; }
+hr{ display:block; height:1px; border:0; margin: .1rem 0; padding: 0; }
+input,select{ vertical-align:middle; }
+h1,h2,h3,h4,h5,h6,b{
+    font-weight: 400;
+}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+.fl { float: left; }
+.fr { float: right; }
+.flex { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
+.fx1 { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
+img{
+    width: 100%;
+}
+input{-webkit-appearance: none;background: transparent;}
+.wrap{
+    width: 6.6rem;
+    margin:0 auto;
+}
