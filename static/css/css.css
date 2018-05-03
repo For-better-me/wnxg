@@ -950,7 +950,6 @@
 .sort .fix_list ul {
   width: 4.96rem;
   margin: 0 auto;
-  display: none;
 }
 .sort .fix_list ul.on {
   display: block;

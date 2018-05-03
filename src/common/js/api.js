@@ -2,8 +2,8 @@
  * 接口定义文件
  */
 
-const baseUrl = "http://118.31.116.206:8080/wnxg-platform" // 测试版 数据接口
-const ulbBaseUrl = 'https://mantest.wannengxiaoge.com' // 测试版 功能接口
+const baseUrl = "https://bird.ioliu.cn/v1?url=http://118.31.116.206:8080/wnxg-platform" // 测试版 数据接口
+const ulbBaseUrl = 'https://bird.ioliu.cn/v1?url=https://mantest.wannengxiaoge.com' // 测试版 功能接口
 
 // const baseUrl = 'http://mantest.wannengxiaoge.com/wnxg-platform' // 正式版 数据接口
 // const ulbBaseUrl = 'http://mantest.wannengxiaoge.com' // 正式版 功能接口

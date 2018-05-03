@@ -18,51 +18,15 @@
          </div>
          <div class="bd">
              <ul>
-                 <li><a href="javascript:;"><img src="static/img/banner.png"></a></li>
+                 <li v-for="item in bannerList"><a href="javascript:;"><img :src="item.imgUrl"></a></li>
              </ul>
          </div>
      </div>
      <div class="class_one">
-         <a href="sort_list.html">
-             <img src="static/img/icon1.png">
-             <p>灯具电路</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon2.png">
-             <p>龙头管件</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon3.png">
-             <p>卫浴洁具</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon4.png">
-             <p>墙面地面</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon5.png">
-             <p>门窗家具</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon6.png">
-             <p>打孔疏通</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon7.png">
-             <p>家居建材</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon8.png">
-             <p>家电维修</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon9.png">
-             <p>开锁换锁</p>
-         </a>
-         <a href="sort_list.html">
-             <img src="static/img/icon10.png">
-             <p>手机维修</p>
-         </a>
+        <a href="javascript:;" v-for="item in skuFirst" @click="goSort(item.id,item.cityCode)">
+            <img :src="item.logoUrl">
+            <p>{{item.name}}</p>
+        </a>
      </div>
      <div class="selection">
          <div class="tit_common">
@@ -131,16 +95,28 @@ export default {
   name: 'index',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      bannerList:[],
+      skuFirst:[]
+    }
+  },
+  methods:{
+    goSort(id,cityCode){
+        this.$router.push({name:'list',params:{id:id,cityCode:cityCode}})
     }
   },
   mounted(){
     util.$http({
-      url: $api.public.adInfo,
-      data: { typeCode: 'user_banner', cityCode: '130105' },
+       url: $api.public.adInfo,
+       data: { typeCode: 'user_banner', cityCode: '130105' },
+    },
+    {
+        url: $api.skuList.skuFirst,
+        data: { cityCode: '130105', serviceId: 0 }
     })
     .then(res=>{
-      console.log(res);
+       this.bannerList.push(res[0].data[0]);
+       this.skuFirst = res[1].data;
     })
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <div class="footer_menu">
+    <div class="footer_menu" v-show="$store.state.requiresMenu">
         <dl>
             <router-link to='/index'>
               <dt></dt>
@@ -25,8 +25,10 @@
 </template>
 
 <script>
+import store from '@/store/index'
 export default {
-  name: 'App'
+  name: 'App',
+
 }
 </script>
 

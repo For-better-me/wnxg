@@ -1,4 +1,5 @@
 const state = {
-    token : ''
+    token : '',
+    requiresMenu:true
 }
 export default state

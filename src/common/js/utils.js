@@ -63,10 +63,11 @@ function $http (...options) { // 封装通信函数 可取代request方法
     
                 let defaultOpt = {
                     loading: true, // 是否显示Loading提示窗
-                    method: 'get', // 请求方法！！
+                    method: 'GET', // 请求方法！！
                     data: {}, // 需要加密的数据
                     expressData: {}, // 不需要加密的数据
                     header: {
+                        "Access-Control-Allow-Origin": "*",
                         token: store.state.token ? store.state.token : ''
                     }
                 }
@@ -74,6 +75,11 @@ function $http (...options) { // 封装通信函数 可取代request方法
                 // 合并配置项
                 opt = merge(defaultOpt, opt)
                 opt.data = merge(opt.data, opt.expressData)
+                var _queryString2 = ''
+                for (let key in opt.data) {
+                    _queryString2 += (_queryString2 != '' ? '&' : '') + `${key}=${opt.data[key]}`
+                }
+                opt.url = opt.url+'?'+_queryString2
     
                 options[i] = opt
             }
@@ -117,6 +123,7 @@ function $http (...options) { // 封装通信函数 可取代request方法
                     } else {
                         resolve(res[0].data)
                     }
+                    console.log('请求完成：',res);
                 })
                 .catch(err => {
                     if (loading) {
